@@ -1,0 +1,28 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Dependencies
+node_modules/
+
+# Playwright Reports
+playwright-report/
+test-results/
+
+# Allure Reports
+allure-results/
+allure-report/
+
+# Environment files
+.env
+
+# Log files
+*.log
+# Ignore assignment screenshots
+q3-*.png
+
