@@ -1,4 +1,4 @@
-# SQA Demo Web Shop Automation
+﻿# SQA Demo Web Shop Automation
 
 Playwright UI scenarios for Part A and a Newman/Postman API collection for Part C. Each run writes an HTML report and an Allure report under `reports/`.
 
@@ -57,13 +57,16 @@ This runs Q1, Q2, Q3, and then the Part C API collection. Execution continues th
 
 ## View reports
 
+- Combined Allure Report: `reports/Full-execution-report/index.html`
+- API Allure Report: `reports/API-allure-report/index.html`
+
 Open the generated HTML files directly in a browser:
 
 - UI: `reports/<scenario>/playwright-html/index.html`
 - API: `reports/api/newman-html.html`
 - Allure: `reports/<scenario>/allure-report/index.html`
 
-An Allure report is generated after every run and includes test details and captured attachments. Reports are regenerated for a scenario the next time that scenario is run. Generated reports are ignored by Git; run the tests after cloning to create them locally.
+An Allure report is generated after every run and includes test details and captured attachments. Reports are regenerated for a scenario the next time that scenario is run. Generated execution reports are available in the `reports/` directory. Temporary Allure result files are ignored by Git. Reports can be regenerated locally using the provided npm scripts.
 
 ## Project structure
 
@@ -79,3 +82,5 @@ reports/                Generated HTML and Allure reports (local)
 ## Public repository
 
 https://github.com/nusratnowshin1-ctrl/SQA-DemoWebShop
+
+
