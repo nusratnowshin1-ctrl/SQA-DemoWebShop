@@ -1,9 +1,0 @@
-{
-  "id": 1,
-  "name": "Terry VonRueden II",
-  "email": "Cassidy80@hotmail.com",
-  "phone": "1-770-736-8031 x56442",
-  "company": {
-    "name": "Leuschke - Johnston"
-  }
-}

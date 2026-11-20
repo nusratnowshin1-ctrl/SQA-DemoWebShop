@@ -1,5 +1,5 @@
 {
-    "Date": "Fri, 20 Nov 2026 14:50:21 GMT",
+    "Date": "Fri, 20 Nov 2026 15:21:53 GMT",
     "Content-Type": "application/json; charset=utf-8",
     "Content-Length": "1847",
     "Connection": "keep-alive",
@@ -20,9 +20,9 @@
     "x-ratelimit-limit": "1000",
     "x-ratelimit-remaining": "999",
     "x-ratelimit-reset": "1789706950",
-    "Age": "18503",
+    "Age": "20395",
     "Accept-Ranges": "bytes",
     "cf-cache-status": "HIT",
-    "CF-RAY": "a5d8443e6e263d91-DAC",
+    "CF-RAY": "a5d8726d29ec7b77-DAC",
     "alt-svc": "h3=\":443\"; ma=86400"
 }

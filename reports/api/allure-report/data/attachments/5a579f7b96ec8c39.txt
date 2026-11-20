@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "Larry Aufderhar",
+  "email": "Lori.Goodwin32@yahoo.com",
+  "phone": "1-770-736-8031 x56442",
+  "company": {
+    "name": "Legros and Sons"
+  }
+}

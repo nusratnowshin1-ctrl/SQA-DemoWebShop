@@ -44,3 +44,6 @@ q3-*.png
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Ignore generated API Allure results
+/reports/api/allure-results/
