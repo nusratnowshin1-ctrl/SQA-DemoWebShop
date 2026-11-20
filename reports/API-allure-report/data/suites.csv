@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","320","01 - GET All Users","Part C - API Automation","2026-11-20","passed","2026-11-20","","","",""
+"","115","02 - GET User By ID","Part C - API Automation","2026-11-20","passed","2026-11-20","","","",""
+"","1015","03 - PUT Update User","Part C - API Automation","2026-11-20","passed","2026-11-20","","","",""

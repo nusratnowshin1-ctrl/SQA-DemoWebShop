@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "Stacy Witting",
+  "email": "Chet_Senger@yahoo.com",
+  "phone": "1-770-736-8031 x56442",
+  "company": {
+    "name": "Gleason, Robel and Ziemann"
+  }
+}

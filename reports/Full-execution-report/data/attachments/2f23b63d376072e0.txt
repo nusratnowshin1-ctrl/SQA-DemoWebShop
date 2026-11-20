@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "name": "Marshall Renner",
+    "email": "Priscilla91@gmail.com",
+    "phone": "1-770-736-8031 x56442",
+    "company": {
+        "name": "Dach, Bednar and Herman"
+    }
+}

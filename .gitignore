@@ -1,28 +1,46 @@
 
-# Playwright
+# ========================================
+# Demo Web Shop Automation - Git Ignore
+# ========================================
+
+# Node.js Dependencies
 node_modules/
+
+# Playwright Temporary Files
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+/.playwright-browsers/
 
-# Dependencies
-node_modules/
+# Allure Temporary Results
+/allure-results/
 
-# Playwright Reports
-playwright-report/
-test-results/
+# Temporary API and Combined Results
+/reports/combined-results/
+/reports/API-allure-results/
 
-# Allure Reports
-allure-results/
-# allure-report/
+# HTML Reports - Keep for GitHub Submission
+# /allure-report/
+# /reports/Q1-report/
+# /reports/Q2-report/
+# /reports/Q3-report/
+# /reports/API-allure-report/
+# /reports/Full-execution-report/
 
-# Environment files
+# Environment and Secrets
 .env
+.env.*
+!.env.example
 
-# Log files
+# Log Files
 *.log
-# Ignore assignment screenshots
+npm-debug.log*
+
+# Temporary Assignment Screenshots
 q3-*.png
 
+# OS Files
+.DS_Store
+Thumbs.db

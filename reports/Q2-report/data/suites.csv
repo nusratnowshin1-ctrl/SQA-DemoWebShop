@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","12134","Q2 - Register and add product to cart","chromium","2026-11-20","passed","2026-11-20","","q2-register-cart.spec.js","",""
+"","12551","Q2 - Register and add product to cart","firefox","2026-11-20","passed","2026-11-20","","q2-register-cart.spec.js","",""
+"","15157","Q2 - Register and add product to cart","webkit","2026-11-20","passed","2026-11-20","","q2-register-cart.spec.js","",""

@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "Alfred Effertz DVM",
+  "email": "Shyann47@yahoo.com",
+  "phone": "1-770-736-8031 x56442",
+  "company": {
+    "name": "Stiedemann, Funk and Reinger"
+  }
+}

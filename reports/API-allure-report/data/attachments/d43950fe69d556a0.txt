@@ -1,0 +1,9 @@
+// Generate dynamic data
+const updatedName = pm.variables.replaceIn("{{$randomFullName}}");
+const updatedEmail = pm.variables.replaceIn("{{$randomEmail}}");
+const updatedCompanyName = pm.variables.replaceIn("{{$randomCompanyName}}");
+
+// Save generated values
+pm.collectionVariables.set("updatedName", updatedName);
+pm.collectionVariables.set("updatedEmail", updatedEmail);
+pm.collectionVariables.set("updatedCompanyName", updatedCompanyName);
