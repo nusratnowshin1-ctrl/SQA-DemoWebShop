@@ -16,7 +16,7 @@ test-results/
 
 # Allure Reports
 allure-results/
-allure-report/
+# allure-report/
 
 # Environment files
 .env
