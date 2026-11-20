@@ -52,23 +52,25 @@ test('Q2 - Register and add product to cart', async ({ page }, testInfo) => {
     await page.goto('https://demowebshop.tricentis.com/books');
 
     // Select Product
-    await page.getByRole('link', {
-        name: 'Computing and Internet',
-        exact: true
-    }).click();
+const productLink = page.getByRole('link', {
+    name: 'Computing and Internet',
+    exact: true
+});
 
-    // Verify Product Page
-    await expect(
-        page.getByRole('heading', {
-            name: 'Computing and Internet'
-        })
-    ).toBeVisible();
+await expect(productLink).toBeVisible();
+await productLink.click();
+
+// Verify Product Page
+await expect(page.locator('.product-name h1'))
+    .toHaveText('Computing and Internet');
 
     // Set Product Quantity
     await page.locator('.qty-input').fill('2');
 
     // Add Product to Cart
     await page.locator('#add-to-cart-button-13').click();
+    await expect(page.locator('.bar-notification.success'))
+        .toContainText(/added to.*shopping cart/i);
 
     // Open Shopping Cart
     await page.getByRole('link', {

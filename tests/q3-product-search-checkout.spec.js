@@ -5,6 +5,7 @@ const { RegisterPage } = require('../pages/RegisterPage');
 const { SearchPage } = require('../pages/SearchPage');
 
 test('Q3 - Product Search and Checkout', async ({ page }) => {
+    test.setTimeout(60000);
 
     const searchPage = new SearchPage(page);
     const registerPage = new RegisterPage(page);

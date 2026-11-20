@@ -1,182 +1,81 @@
 # SQA Demo Web Shop Automation
 
-## 1. Project Overview
+Playwright UI scenarios for Part A and a Newman/Postman API collection for Part C. Each run writes an HTML report and an Allure report under `reports/`.
 
-This project contains automated test scenarios for the Demo Web Shop application using Playwright with JavaScript.
+## Requirements
 
-The project focuses on testing login validation, customer registration, product search, shopping cart functionality, and the complete checkout process.
+- Node.js 20 or newer and npm
+- Git (only needed to clone the repository)
+- Internet access while running UI/API scenarios
 
-## 2. Technology Stack
-
-- JavaScript (Node.js)
-- Playwright Test
-- Chromium Browser
-- Allure Report
-- Page Object Model (POM)
-- Git and GitHub
-
-## 3. Project Structure
-
-```text
-SQA-DemoWebShop/
-│
-├── pages/
-│   ├── LoginPage.js
-│   ├── RegisterPage.js
-│   └── SearchPage.js
-│
-├── tests/
-│   ├── q1-invalid-login.spec.js
-│   ├── q2-register-cart.spec.js
-│   └── q3-product-search-checkout.spec.js
-│
-├── playwright.config.js
-├── package.json
-├── package-lock.json
-└── README.md
-```
-
-## 4. Test Scenarios
-
-### Q1 - Invalid Login
-
-**Objective:** Verify that the application displays an error message when a user enters invalid login credentials.
-
-**Expected Result:** Login should fail and an appropriate error message should be displayed.
-
-**Test File:** `tests/q1-invalid-login.spec.js`
-
-### Q2 - Register and Add Product to Cart
-
-**Objective:** Register a new customer and verify that a selected product can be added to the shopping cart.
-
-**Test Steps:**
-1. Open the Demo Web Shop.
-2. Register a new customer.
-3. Verify successful registration.
-4. Search and open a product.
-5. Add the product to the shopping cart.
-6. Verify the product in the cart.
-
-**Expected Result:** The customer should be registered successfully, and the selected product should appear in the shopping cart.
-
-**Test File:** `tests/q2-register-cart.spec.js`
-
-### Q3 - Product Search and Checkout (E2E)
-
-**Objective:** Test the complete product purchasing workflow.
-
-**Test Steps:**
-1. Search for a product.
-2. Verify the correct search result.
-3. Open the product details.
-4. Increase the product quantity.
-5. Add the product to the shopping cart.
-6. Verify the product and quantity.
-7. Agree to the Terms of Service.
-8. Proceed to checkout.
-9. Complete billing, shipping and payment steps.
-10. Confirm the order.
-11. Open and verify the order details.
-
-**Expected Result:** The customer should successfully complete the checkout process, confirm the order, and view the order details.
-
-**Test File:** `tests/q3-product-search-checkout.spec.js`
-
-## 5. Installation and Setup
-
-### Prerequisites
-
-- Node.js
-- npm
-- Git
-
-### Clone the Repository
+## Setup
 
 ```bash
 git clone https://github.com/nusratnowshin1-ctrl/SQA-DemoWebShop.git
 cd SQA-DemoWebShop
+npm ci
+npm run setup:browsers
 ```
 
-### Install Dependencies
+The suite runs Playwright in Chromium in headless mode by default. Use `npx playwright install --with-deps chromium` on Linux if browser system dependencies are missing.
+
+## Run an individual UI scenario
 
 ```bash
-npm install
+npm run test:q1
+npm run test:q2
+npm run test:q3
 ```
 
-### Install Chromium
+Each command runs its scenario in `tests/` and generates reports under `reports/q1/`, `reports/q2/`, or `reports/q3/`.
+
+## Run the UI suite
 
 ```bash
-npx playwright install chromium
+npm run test:ui
 ```
 
-## 6. Running Individual Test Scenarios
+This runs Q1, Q2, and Q3 sequentially. Each scenario gets its own HTML and Allure report folder.
 
-### Run Q1
+## Run the Part C API collection
+
+The Postman collection is included in [`api-tests/Part-C-API-Automation.json`](api-tests/Part-C-API-Automation.json). Run it with Newman:
 
 ```bash
-npx playwright test tests/q1-invalid-login.spec.js --project=chromium --headed --workers=1 --reporter=list
+npm run test:api
 ```
 
-### Run Q2
+The API HTML report is `reports/api/newman-html.html`; the Allure report is `reports/api/allure-report/index.html`.
+
+## Run everything in sequence
 
 ```bash
-npx playwright test tests/q2-register-cart.spec.js --project=chromium --headed --workers=1 --reporter=list
+npm run test:all
 ```
 
-### Run Q3
+This runs Q1, Q2, Q3, and then the Part C API collection. Execution continues through the sequence if a scenario fails, and the command returns a failing exit code if any scenario fails.
 
-```bash
-npx playwright test tests/q3-product-search-checkout.spec.js --project=chromium --headed --workers=1 --reporter=list
+## View reports
+
+Open the generated HTML files directly in a browser:
+
+- UI: `reports/<scenario>/playwright-html/index.html`
+- API: `reports/api/newman-html.html`
+- Allure: `reports/<scenario>/allure-report/index.html`
+
+An Allure report is generated after every run and includes test details and captured attachments. Reports are regenerated for a scenario the next time that scenario is run. Generated reports are ignored by Git; run the tests after cloning to create them locally.
+
+## Project structure
+
+```text
+pages/                  Playwright page objects
+tests/                  Part A UI scenarios
+api-tests/              Part C Postman collection and notes
+scripts/run-suite.js    Individual and sequential suite runner
+playwright.config.js    Playwright and report configuration
+reports/                Generated HTML and Allure reports (local)
 ```
 
-## 7. Run All Test Scenarios Together
+## Public repository
 
-```bash
-npx playwright test --project=chromium --headed --workers=1 --reporter=list
-```
-
-## 8. Allure Report Generation
-
-After executing the tests with the configured Allure reporter, generate the report using:
-
-```bash
-allure generate allure-results --clean -o allure-report
-```
-
-Open the generated report:
-
-```bash
-allure open allure-report
-```
-
-The Allure Report provides an overview of test execution, passed and failed test cases, and detailed test execution information.
-
-## 9. GitHub Workflow
-
-The project uses separate branches for individual test scenarios.
-
-- `main`
-- `q1-invalid-login`
-- `q2-register-cart`
-- `q3-product-checkout`
-
-Each question was developed and documented in its respective branch and merged into the main branch.
-
-Meaningful commits were maintained to reflect incremental project development.
-
-## 10. Test Execution Summary
-
-The project contains three automated test scenarios:
-
-1. Q1 - Invalid Login
-2. Q2 - Register and Add Product to Cart
-3. Q3 - Product Search and Checkout (E2E)
-
-All three test scenarios successfully passed during the recorded test execution.
-
----
-
-**Project:** SQA Demo Web Shop Automation  
-**Repository:** https://github.com/nusratnowshin1-ctrl/SQA-DemoWebShop  
-**Automation Framework:** Playwright with JavaScript
+https://github.com/nusratnowshin1-ctrl/SQA-DemoWebShop
